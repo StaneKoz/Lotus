@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/Lotus/static/js/main.ae68ecc5.js",
+    "main.js": "/Lotus/static/js/main.0918182a.js",
     "static/media/people.png": "/Lotus/static/media/people.6d2f7633b9f93dfda900.png",
     "index.html": "/Lotus/index.html",
-    "main.ae68ecc5.js.map": "/Lotus/static/js/main.ae68ecc5.js.map"
+    "main.0918182a.js.map": "/Lotus/static/js/main.0918182a.js.map"
   },
   "entrypoints": [
-    "static/js/main.ae68ecc5.js"
+    "static/js/main.0918182a.js"
   ]
 }
