@@ -16,18 +16,20 @@ function App() {
   const [peoples, setPeoples] = useState<IPeople[]>([]);
   const [searchPeoples, setSearchPeoples] = useState<IPeople[]>([]);
   useEffect(() => {
-    const response = axios.get<IPeopleResponse>("https:/swapi.dev/api/people/", {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-      .then(res => {
-        console.log(res)
-        setPeoples(res.data.results);
-        setSearchPeoples(res.data.results);
-      });
+    fetchPeoples();
   }, []);
 
+  async function fetchPeoples() {
+    const response = await fetch('https://swapi.dev/api/people', {method: 'GET', headers: {
+      'Content-Type': 'application/json'
+    }});
+
+    const data = await response.json();
+    const peoples = data.results as IPeople[];
+    setPeoples(peoples);
+    setSearchPeoples(peoples);
+  }
+  
   return (
     <div className="App">
       <section className={'peoples'}>
