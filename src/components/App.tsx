@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import PeopleList from './PeopleList';
 import { IPeople } from '../types/IPeople';
-import { $api } from '../htttp';
+import { $api } from '../http';
 import SearchInput from './SearchInput';
 
 interface IPeopleResponse {
