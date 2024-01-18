@@ -13,7 +13,7 @@ const SearchInput: FC<SearchInput> = ({ searchPeoples, setSearchPeoples, peoples
   
   useMemo(() => {
     if (searchQuery) {
-      setSearchPeoples(peoples.filter(people => people.name.toLocaleLowerCase().includes(searchQuery)));
+      setSearchPeoples(peoples.filter(people => people.name.toLocaleLowerCase().includes(searchQuery.toLocaleLowerCase())));
     } else {
       setSearchPeoples(peoples)
     }
