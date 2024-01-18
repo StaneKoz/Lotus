@@ -16,8 +16,10 @@ function App() {
   const [searchPeoples, setSearchPeoples] = useState<IPeople[]>([]);
 
   useEffect(() => {
+    console.log(searchPeoples)
     const response = $api.get<IPeopleResponse>('')
       .then(res => {
+        console.log('Что блять?')
         setPeoples(res.data.results);
         setSearchPeoples(res.data.results);
       });
