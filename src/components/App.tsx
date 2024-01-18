@@ -14,7 +14,7 @@ interface IPeopleResponse {
 function App() {
   const [peoples, setPeoples] = useState<IPeople[]>([]);
   const [searchPeoples, setSearchPeoples] = useState<IPeople[]>([]);
-
+  console.log(searchPeoples)
   useEffect(() => {
     console.log(searchPeoples)
     const response = $api.get<IPeopleResponse>('')
