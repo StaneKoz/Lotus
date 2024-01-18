@@ -1,8 +1,9 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import PeopleList from './PeopleList';
 import { IPeople } from '../types/IPeople';
-import { $api } from '../http';
 import SearchInput from './SearchInput';
+import { config } from 'process';
+import axios from 'axios';
 
 interface IPeopleResponse {
   results: IPeople[]
@@ -14,10 +15,12 @@ interface IPeopleResponse {
 function App() {
   const [peoples, setPeoples] = useState<IPeople[]>([]);
   const [searchPeoples, setSearchPeoples] = useState<IPeople[]>([]);
-  console.log(searchPeoples)
   useEffect(() => {
-    console.log(searchPeoples)
-    const response = $api.get<IPeopleResponse>('')
+    const response = axios.get<IPeopleResponse>("https:/swapi.dev/api/people/", {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
       .then(res => {
         console.log(res)
         setPeoples(res.data.results);
@@ -38,7 +41,7 @@ function App() {
                 <div className='empty-list'>
                   Нет совпадений
                 </div>
-                )
+              )
                 : (
                   <PeopleList peoples={searchPeoples} />
                 )
