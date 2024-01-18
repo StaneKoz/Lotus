@@ -19,7 +19,7 @@ function App() {
     console.log(searchPeoples)
     const response = $api.get<IPeopleResponse>('')
       .then(res => {
-        console.log('Что блять?')
+        console.log(res)
         setPeoples(res.data.results);
         setSearchPeoples(res.data.results);
       });
