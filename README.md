@@ -1,3 +1,3 @@
-Ссылка на сайт:
+Ссылка на сайт
 
 https://lotus-kmys.vercel.app/
